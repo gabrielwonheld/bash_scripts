@@ -1,13 +1,18 @@
 #!/bin/bash
 
+
 echo "--------------"
 echo -e "DNS ZONE"
 echo "--------------"
 
-for server in $(host -t ns $1 | cut -d " " -f 4);do
+if [ $1 == "" ];then
+        echo "digite o DNS desejada para ser scaneada"
+else
 
-        host -l -a $1 $server
+	for server in $(host -t ns $1 | cut -d " " -f 4);do
 
-done
+        	host -l -a $1 $server
 
+	done
+fi
 
