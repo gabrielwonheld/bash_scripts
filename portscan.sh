@@ -55,6 +55,7 @@ validar_host(){
 }
 
 validar_parametros(){
+	
 	if [ $# -ne 3 ]; then
 		echo "Error: The program needs 3 arguments"
 	 	modo_uso
